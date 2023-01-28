@@ -69,11 +69,11 @@ void ClapTrap::takeDamage(unsigned int amount)
         cout << "[takeDatame]Cannot take damage. Because Remaining Hit Points is Zero" << endl;
         return ;
     }
-    //if (amount > this->max_)
-    //{
-        //cout << "[takeDatame]Cannot take damage. amount is lather than MAX" << endl;
-        //return ;
-    //}
+    if (amount > this->max_)
+    {
+        cout << "[takeDatame]Cannot take damage. amount is lather than MAX" << endl;
+        return ;
+    }
     cout << "[takeDatame]ClapTrap " << this->name_;
     cout << " takes " << amount << " damage.";
     cout << endl;
@@ -92,23 +92,23 @@ void ClapTrap::beRepaired(unsigned int amount)
         cout << "[beRepaired]Cannot repaired. Because Remaining Energy Points is Zero" << endl;
         return ;
     }
-    if (this->hit_point_ == UINT_MAX)
-    {
-        cout << "[beRepaired]Cannot repaired. Because Remaining Energy Points is MAX" << endl;
-        return ;
-    }
-    //if (amount > this->max_)
+    //if (this->hit_point_ == INT_MAX)
     //{
-        //cout << "[beRepaired]Cannot repaired. amount is lather than MAX" << endl;
+        //cout << "[beRepaired]Cannot repaired. Because Remaining Energy Points is MAX" << endl;
         //return ;
     //}
+    if (amount > this->max_)
+    {
+        cout << "[beRepaired]Cannot repaired. amount is lather than MAX" << endl;
+        return ;
+    }
     cout << "[beRepaired]ClapTrap " << this->name_;
-    cout << " is Repaired" << amount << endl;
+    cout << " is Repaired " << amount << endl;
     this->energy_point_ -= 1;
     cout << "Remaining Energy Points is " << this->energy_point_ << endl;
-    if (UINT_MAX - this->hit_point_ >= amount)
+    if (INT_MAX - this->hit_point_ >= amount)
         this->hit_point_ += amount;
     else
-        this->hit_point_ = UINT_MAX;
+        this->hit_point_ = INT_MAX;
     cout << "Remaining Hit Points is " << this->hit_point_ << endl;
 }
