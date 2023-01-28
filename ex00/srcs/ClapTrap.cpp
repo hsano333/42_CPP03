@@ -43,6 +43,7 @@ void ClapTrap::operator=(const ClapTrap &clap)
 }
 ClapTrap::~ClapTrap()
 {
+    cout << "Destructor called" << endl;
 }
 
 void ClapTrap::attack(const std::string& target)
