@@ -15,7 +15,7 @@ class ClapTrap
         unsigned int attack_damege_;
         const static unsigned int max_ = INT_MAX;
     public:
-        //ClapTrap();
+        ClapTrap();
         ClapTrap(string name);
         ClapTrap(const ClapTrap &clap);
         void operator=(const ClapTrap &clap);

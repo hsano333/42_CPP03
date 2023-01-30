@@ -1,4 +1,4 @@
-NAME 	:= exe
+NAME 	:= Aaaaand...OPEN!
 LIB	:= ./lib/
 OBJDIR	:= ./obj
 SRCDIR	:= ./srcs/
