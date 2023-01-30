@@ -1,8 +1,8 @@
-NAME 	:= Repetitive_work
+NAME 	:= Serena,_my_love!
 LIB	:= ./lib/
 OBJDIR	:= ./obj
 SRCDIR	:= ./srcs/
-SRC	:= main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+SRC	:= main.cpp ClapTrap.cpp ScavTrap.cpp
 ENTRY	:= 
 
 INCS	:= ./include
