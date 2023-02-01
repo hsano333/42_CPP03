@@ -7,18 +7,18 @@ DiamondTrap::DiamondTrap() : ClapTrap("name_clap_name")
 {
     cout << "[DiamondTrap] default constructor called" << endl;
     this->name_ = "name";
-    this->FragTrap::hit_point_ = 100;
-    this->ScavTrap::energy_point_ = 100;
-    this->FragTrap::attack_damege_ = 30;
+    this->FragTrap::hit_point_ = this->FragTrap::hit_point_;
+    this->ScavTrap::energy_point_ = this->ScavTrap::energy_point_;
+    this->FragTrap::attack_damege_ = this->FragTrap::attack_damege_;
 }
 
 DiamondTrap::DiamondTrap(string name) : ClapTrap(name + "_clap_name")
 {
-    cout << "[DiamondTrap] default constructor called" << endl;
+    cout << "[DiamondTrap] constructor called" << endl;
     this->name_ = name;
-    this->FragTrap::hit_point_ = 100;
-    this->ScavTrap::energy_point_ = 100;
-    this->FragTrap::attack_damege_ = 30;
+    this->FragTrap::hit_point_ = this->FragTrap::hit_point_;
+    this->ScavTrap::energy_point_ = this->ScavTrap::energy_point_;
+    this->FragTrap::attack_damege_ = this->FragTrap::attack_damege_;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &scav) : ClapTrap(scav.ClapTrap::name_)
@@ -42,6 +42,7 @@ void DiamondTrap::operator=(const DiamondTrap &scav)
 
 DiamondTrap::~DiamondTrap()
 {
+    cout << "[DiamondTrap][" << this->name_ << "]Destructor called" << endl;
 };
 
 void DiamondTrap::attack(const std::string & target)

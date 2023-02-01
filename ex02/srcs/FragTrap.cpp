@@ -5,7 +5,7 @@ using std::endl;
 
 FragTrap::FragTrap() : high_fives_("")
 {
-    cout << "[FragTrap]constructor called" << endl;
+    cout << "[FragTrap] Default constructor called" << endl;
     this->hit_point_ = 100;
     this->energy_point_ = 100;
     this->attack_damege_ = 30;

@@ -26,8 +26,8 @@ int main(void)
     dia.beRepaired(INT_MAX);
     dia.beRepaired(1);
     dia.takeDamage(INT_MAX);
-    for (int i=0; i < 50;i++)
-        dia.beRepaired(1);
+    //for (int i=0; i < 50;i++)
+        //dia.beRepaired(1);
     dia.attack("Enemy");
     dia.beRepaired(1);
     dia.whoAmI();

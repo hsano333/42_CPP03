@@ -26,8 +26,8 @@ int main(void)
     frag.beRepaired(INT_MAX);
     frag.beRepaired(1);
     frag.takeDamage(INT_MAX);
-    for (int i=0; i < 50;i++)
-        frag.beRepaired(1);
+    //for (int i=0; i < 100;i++)
+        //frag.beRepaired(1);
     frag.attack("Enemy");
     frag.beRepaired(1);
 
