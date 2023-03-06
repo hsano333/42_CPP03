@@ -33,7 +33,7 @@ void ClapTrap::operator=(const ClapTrap &clap)
 
 ClapTrap::~ClapTrap()
 {
-    cout << "[ClapTrap]Destructor called" << endl;
+    cout << "[ClapTrap][" << this->name_ << "]Destructor called" << endl;
 }
 
 void ClapTrap::attack(const std::string& target)
