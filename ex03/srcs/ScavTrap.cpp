@@ -28,14 +28,17 @@ ScavTrap::ScavTrap(const ScavTrap &scav) : ClapTrap(scav.name_) , gate_keeper_mo
     this->attack_damege_ = scav.attack_damege_;
 }
 
-void ScavTrap::operator=(const ScavTrap &scav)
+ScavTrap& ScavTrap::operator=(const ScavTrap &scav)
 {
     cout << "[ScavTrap]Copy assignment operator called" << endl;
+    if (this == &scav)
+        return (*this);
     this->name_ = scav.name_;
     this->hit_point_ = scav.hit_point_;
     this->energy_point_ = scav.energy_point_;
     this->attack_damege_ = scav.attack_damege_;
     this->gate_keeper_mode_ = scav.gate_keeper_mode_;
+    return (*this);
 }
 
 ScavTrap::~ScavTrap()

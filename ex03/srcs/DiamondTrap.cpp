@@ -4,8 +4,11 @@ using std::cout;
 using std::endl;
 
 DiamondTrap::DiamondTrap() : ClapTrap("name_clap_name")
+                             , FragTrap("name_clap_name")
+                             , ScavTrap("name_clap_name")
+                             , name_("name")
 {
-    cout << "[DiamondTrap] default constructor called" << endl;
+    cout << "[DiamondTrap] Default constructor called" << endl;
     this->name_ = "name";
     this->hit_point_ = this->FragTrap::hit_point_;
     this->energy_point_ = this->ScavTrap::energy_point_;
@@ -13,6 +16,9 @@ DiamondTrap::DiamondTrap() : ClapTrap("name_clap_name")
 }
 
 DiamondTrap::DiamondTrap(string name) : ClapTrap(name + "_clap_name")
+                                        , FragTrap(name + "_clap_name")
+                                        , ScavTrap(name + "_clap_name")
+                                        , name_(name)
 {
     cout << "[DiamondTrap] constructor called" << endl;
     this->name_ = name;
@@ -21,23 +27,32 @@ DiamondTrap::DiamondTrap(string name) : ClapTrap(name + "_clap_name")
     this->attack_damege_ = this->FragTrap::attack_damege_;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &scav) : ClapTrap(scav.ClapTrap::name_)
+DiamondTrap::DiamondTrap(const DiamondTrap &dia) : ClapTrap(dia.ClapTrap::name_)
+                                                   , FragTrap(dia.FragTrap::name_)
+                                                   , ScavTrap(dia.ScavTrap::name_)
+                                                   , name_(dia.name_)
 {
     cout << "[DiamondTrap]Copy constructor called" << endl;
-    this->name_ = scav.name_;
-    this->hit_point_ = scav.hit_point_;
-    this->energy_point_ = scav.energy_point_;
-    this->attack_damege_ = scav.attack_damege_;
+    //this->name_ = dia.name_;
+    this->hit_point_ = dia.hit_point_;
+    this->energy_point_ = dia.energy_point_;
+    this->attack_damege_ = dia.attack_damege_;
 }
 
-void DiamondTrap::operator=(const DiamondTrap &scav)
+DiamondTrap& DiamondTrap::operator=(const DiamondTrap &dia)
 {
     cout << "[DiamondTrap]Copy assignment operator called" << endl;
-    this->ClapTrap::name_ = scav.ClapTrap::name_;
-    this->name_ = scav.name_;
-    this->hit_point_ = scav.hit_point_;
-    this->energy_point_ = scav.energy_point_;
-    this->attack_damege_ = scav.attack_damege_;
+    if (this == &dia)
+        return (*this);
+    this->ScavTrap::operator=(dia);
+    this->FragTrap::operator=(dia);
+    this->ClapTrap::operator=(dia);
+    this->ClapTrap::name_ = dia.ClapTrap::name_;
+    this->name_ = dia.name_;
+    this->hit_point_ = dia.hit_point_;
+    this->energy_point_ = dia.energy_point_;
+    this->attack_damege_ = dia.attack_damege_;
+    return (*this);
 }
 
 DiamondTrap::~DiamondTrap()

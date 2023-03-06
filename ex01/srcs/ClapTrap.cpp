@@ -22,13 +22,16 @@ ClapTrap::ClapTrap(const ClapTrap &clap)
     this->attack_damege_ = clap.attack_damege_;
 }
 
-void ClapTrap::operator=(const ClapTrap &clap)
+ClapTrap& ClapTrap::operator=(const ClapTrap &clap)
 {
     cout << "[ClapTrap]Copy assignment operator called" << endl;
+    if (this == &clap)
+        return (*this);
     this->name_ = clap.name_;
     this->hit_point_ = clap.hit_point_;
     this->energy_point_ = clap.energy_point_;
     this->attack_damege_ = clap.attack_damege_;
+    return (*this);
 }
 
 ClapTrap::~ClapTrap()
