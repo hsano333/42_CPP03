@@ -3,6 +3,12 @@
 #include "FragTrap.hpp"
 #include  "FragTrap.hpp"
 
+/*
+#include <stdio.h>
+__attribute__((destructor)) void f(void){
+    system("leaks Repetitive_work");
+}
+*/
 int main(void)
 {
     {
@@ -35,6 +41,19 @@ int main(void)
         frag.beRepaired(1);
     }
     {
+        std::cout << std::endl;
+        FragTrap frag("Test2");
+        FragTrap frag2 = FragTrap(frag);
+        FragTrap frag3;
+        frag3 = frag;
+
+        frag.attack("Enemy1");
+        frag2.attack("Enemy2");
+        frag3.attack("Enemy3");
+
+    }
+    {
+        std::cout << std::endl;
         ClapTrap *clap1 = new ClapTrap();
         ClapTrap *frag1 = new FragTrap();
         ClapTrap *test;

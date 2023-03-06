@@ -20,12 +20,12 @@ FragTrap::FragTrap(string name) : ClapTrap(name), high_fives_("")
     this->attack_damege_ = 30;
 }
 
-FragTrap::FragTrap(const FragTrap &flag) : ClapTrap(flag.name_) , high_fives_(flag.high_fives_) 
+FragTrap::FragTrap(const FragTrap &frag) : ClapTrap(frag) , high_fives_(frag.high_fives_) 
 {
     cout << "[FragTrap]Copy constructor called" << endl;
-    this->hit_point_ = flag.hit_point_;
-    this->energy_point_ = flag.energy_point_;
-    this->attack_damege_ = flag.attack_damege_;
+    this->hit_point_ = frag.hit_point_;
+    this->energy_point_ = frag.energy_point_;
+    this->attack_damege_ = frag.attack_damege_;
 }
 
 FragTrap& FragTrap::operator=(const FragTrap &frag)
@@ -53,7 +53,7 @@ void FragTrap::attack(const std::string & target)
         cout << "[FragTrap][attack]Cannot attack. Because Energy Points is Zero" << endl;
         return ;
     }
-    cout << "[FragTrap][attack]ClapTrap " << this->name_;
+    cout << "[FragTrap][attack]FragTrap " << this->name_;
     cout << " attacks " << target;
     cout << " causing " << this->attack_damege_;
     cout << " points of damage!";
