@@ -3,7 +3,7 @@
 using std::cout;
 using std::endl;
 
-FragTrap::FragTrap() : high_fives_("")
+FragTrap::FragTrap() : ClapTrap(), high_fives_("")
 {
     cout << "[FragTrap] Default constructor called" << endl;
     this->hit_point_ = 100;
@@ -11,7 +11,7 @@ FragTrap::FragTrap() : high_fives_("")
     this->attack_damege_ = 30;
 }
 
-FragTrap::FragTrap(string name) : high_fives_("")
+FragTrap::FragTrap(string name) : ClapTrap(name), high_fives_("")
 {
     cout << "[FragTrap]constructor called" << endl;
     this->name_ = name;
@@ -31,6 +31,7 @@ FragTrap::FragTrap(const FragTrap &flag) : ClapTrap(flag.name_) , high_fives_(fl
 void FragTrap::operator=(const FragTrap &frag)
 {
     cout << "[FragTrap]Copy assignment operator called" << endl;
+    this->ClapTrap::operator=(frag);
     this->name_ = frag.name_;
     this->hit_point_ = frag.hit_point_;
     this->energy_point_ = frag.energy_point_;

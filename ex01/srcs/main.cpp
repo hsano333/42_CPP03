@@ -19,6 +19,7 @@ int main(void)
 
         scav.attack("Enemy");
         test(scav);
+
         scav.takeDamage(0);
         scav.takeDamage(INT_MAX + 1u);
         scav.takeDamage(-3);

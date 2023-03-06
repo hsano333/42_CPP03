@@ -12,7 +12,7 @@ class FragTrap : public ClapTrap
         FragTrap(string name);
         FragTrap(const FragTrap &clap);
         void operator=(const FragTrap &clap);
-        ~FragTrap();
+        virtual ~FragTrap();
         virtual void attack(const std::string& target);
         void highFivesGuys(void);
 };

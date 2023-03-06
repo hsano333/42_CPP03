@@ -3,7 +3,7 @@
 using std::cout;
 using std::endl;
 
-ScavTrap::ScavTrap() : gate_keeper_mode_(false)
+ScavTrap::ScavTrap() :  ClapTrap(), gate_keeper_mode_(false)
 {
     cout << "[ScavTrap] Default constructor called" << endl;
     this->hit_point_ = 100;
@@ -11,7 +11,7 @@ ScavTrap::ScavTrap() : gate_keeper_mode_(false)
     this->attack_damege_ = 20;
 }
 
-ScavTrap::ScavTrap(string name) : gate_keeper_mode_(false)
+ScavTrap::ScavTrap(string name) : ClapTrap(name), gate_keeper_mode_(false)
 {
     cout << "[ScavTrap]constructor called" << endl;
     this->name_ = name;
