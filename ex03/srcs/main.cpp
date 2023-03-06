@@ -5,9 +5,9 @@
 
 int main(void)
 {
-    ClapTrap clap("Test Clap");
-    DiamondTrap dia("Test Diamond");
-    dia.attack("Enemy");
+    ClapTrap clap("Test_Clap_Name");
+    DiamondTrap dia("Test_Diamond_Name");
+    dia.attack("Enemy_Name");
     dia.takeDamage(0);
     dia.takeDamage(INT_MAX + 1u);
     dia.takeDamage(-3);
@@ -18,7 +18,7 @@ int main(void)
     dia.highFivesGuys();
     clap = dia;
     //clap.whoAmI();
-    clap.attack("Enemy");
+    clap.attack("Enemy_Name");
 
 
     dia.beRepaired(INT_MAX + 1u);
@@ -28,7 +28,7 @@ int main(void)
     dia.takeDamage(INT_MAX);
     //for (int i=0; i < 50;i++)
         //dia.beRepaired(1);
-    dia.attack("Enemy");
+    dia.attack("Enemy_Name");
     dia.beRepaired(1);
     dia.whoAmI();
 

@@ -5,7 +5,7 @@ using std::endl;
 
 ScavTrap::ScavTrap() : gate_keeper_mode_(false)
 {
-    cout << "[ScavTrap]constructor called" << endl;
+    cout << "[ScavTrap] Default constructor called" << endl;
     this->hit_point_ = 100;
     this->energy_point_ = 50;
     this->attack_damege_ = 20;

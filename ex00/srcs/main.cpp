@@ -3,6 +3,7 @@
 int main(void)
 {
     ClapTrap clap("Test");
+    ClapTrap clap2;
     clap.attack("Enemy");
     clap.takeDamage(0);
     clap.takeDamage(INT_MAX + 1u);

@@ -42,6 +42,23 @@ FragTrap::~FragTrap()
     cout << "[FragTrap][" << this->name_ << "]Destructor called" << endl;
 }
 
+void FragTrap::attack(const std::string & target)
+{
+    if (this->energy_point_ == 0)
+    {
+        cout << "[FragTrap][attack]Cannot attack. Because Energy Points is Zero" << endl;
+        return ;
+    }
+    cout << "[FragTrap][attack]ClapTrap " << this->name_;
+    cout << " attacks " << target;
+    cout << " causing " << this->attack_damege_;
+    cout << " points of damage!";
+    cout << endl;
+
+    this->energy_point_ -= 1;
+    cout << "[FragTrap]Remaining Energy Points is " << this->energy_point_ << endl;
+}
+
 void FragTrap::highFivesGuys(void)
 {
     if (this->high_fives_ == "")

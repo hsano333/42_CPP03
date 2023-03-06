@@ -1,11 +1,24 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 
+void test(ClapTrap clap)
+{
+    clap.attack("Clap?");
+}
+
 int main(void)
 {
     ClapTrap clap("Test Clap");
     ScavTrap scav("Test Scav");
+
+
+    //clap = scav;
+    //clap.guardGate();
+    clap.attack("Enemy");
+    test(clap);
+
     scav.attack("Enemy");
+    test(scav);
     scav.takeDamage(0);
     scav.takeDamage(INT_MAX + 1u);
     scav.takeDamage(-3);
@@ -14,9 +27,6 @@ int main(void)
     scav.takeDamage(1);
 
     scav.guardGate();
-    //clap = scav;
-    //clap.guardGate();
-    clap.attack("Enemy");
 
 
     scav.beRepaired(INT_MAX + 1u);
@@ -24,8 +34,8 @@ int main(void)
     scav.beRepaired(INT_MAX);
     scav.beRepaired(1);
     scav.takeDamage(INT_MAX);
-    for (int i=0; i < 50;i++)
-        scav.beRepaired(1);
+    //for (int i=0; i < 50;i++)
+        //scav.beRepaired(1);
     scav.attack("Enemy");
     scav.beRepaired(1);
 

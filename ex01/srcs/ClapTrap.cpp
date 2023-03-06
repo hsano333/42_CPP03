@@ -5,7 +5,7 @@ using std::endl;
 
 ClapTrap::ClapTrap() : name_("name"), hit_point_(10), energy_point_(10), attack_damege_(0)
 {
-    cout << "[ClapTrap]constructor called" << endl;
+    cout << "[ClapTrap]Default constructor called" << endl;
 }
 
 ClapTrap::ClapTrap(string name) : name_(name), hit_point_(10), energy_point_(10), attack_damege_(0)

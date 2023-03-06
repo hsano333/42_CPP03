@@ -7,18 +7,18 @@ DiamondTrap::DiamondTrap() : ClapTrap("name_clap_name")
 {
     cout << "[DiamondTrap] default constructor called" << endl;
     this->name_ = "name";
-    this->FragTrap::hit_point_ = this->FragTrap::hit_point_;
-    this->ScavTrap::energy_point_ = this->ScavTrap::energy_point_;
-    this->FragTrap::attack_damege_ = this->FragTrap::attack_damege_;
+    this->hit_point_ = this->FragTrap::hit_point_;
+    this->energy_point_ = this->ScavTrap::energy_point_;
+    this->attack_damege_ = this->FragTrap::attack_damege_;
 }
 
 DiamondTrap::DiamondTrap(string name) : ClapTrap(name + "_clap_name")
 {
     cout << "[DiamondTrap] constructor called" << endl;
     this->name_ = name;
-    this->FragTrap::hit_point_ = this->FragTrap::hit_point_;
-    this->ScavTrap::energy_point_ = this->ScavTrap::energy_point_;
-    this->FragTrap::attack_damege_ = this->FragTrap::attack_damege_;
+    this->hit_point_ = this->FragTrap::hit_point_;
+    this->energy_point_ = this->ScavTrap::energy_point_;
+    this->attack_damege_ = this->FragTrap::attack_damege_;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &scav) : ClapTrap(scav.ClapTrap::name_)
