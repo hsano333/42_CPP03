@@ -1,5 +1,16 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include <iostream>
+
+using std::cout;
+using std::endl;
+
+/*
+#include <stdio.h>
+__attribute__((destructor)) void f(void){
+    system("leaks Serena,_my_love!");
+}
+*/
 
 void test(ClapTrap &clap)
 {
@@ -41,8 +52,21 @@ int main(void)
         scav.attack("Enemy");
         scav.beRepaired(1);
     }
+    {
+        std::cout << std::endl;
+        ScavTrap scav("Test2");
+        ScavTrap scav2 = ScavTrap(scav);
+        ScavTrap scav3;
+        scav3 = scav;
+
+        scav.attack("Enemy1");
+        scav2.attack("Enemy2");
+        scav3.attack("Enemy3");
+
+    }
 
     {
+        std::cout << std::endl;
         ClapTrap *clap1 = new ClapTrap();
         ClapTrap *scav1 = new ScavTrap();
         ClapTrap *test;

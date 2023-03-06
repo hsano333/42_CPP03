@@ -20,7 +20,7 @@ ScavTrap::ScavTrap(string name) : ClapTrap(name), gate_keeper_mode_(false)
     this->attack_damege_ = 20;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &scav) : ClapTrap(scav.name_) , gate_keeper_mode_(scav.gate_keeper_mode_) 
+ScavTrap::ScavTrap(const ScavTrap &scav) : ClapTrap(scav) , gate_keeper_mode_(scav.gate_keeper_mode_) 
 {
     cout << "[ScavTrap]Copy constructor called" << endl;
     this->hit_point_ = scav.hit_point_;
