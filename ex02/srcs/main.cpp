@@ -12,7 +12,7 @@ __attribute__((destructor)) void f(void){
 int main(void)
 {
     {
-        ClapTrap clap("Test Clap");
+        //ClapTrap clap("Test Clap");
         FragTrap frag("Test Frag");
         frag.attack("Enemy");
 
@@ -27,7 +27,7 @@ int main(void)
         frag.highFivesGuys();
         //clap = frag;
         //clap.guardGate();
-        clap.attack("Enemy");
+        //clap.attack("Enemy");
 
 
         frag.beRepaired(INT_MAX + 1u);

@@ -3,15 +3,18 @@
 using std::cout;
 using std::endl;
 
-ScavTrap::ScavTrap() : gate_keeper_mode_(false)
+ScavTrap::ScavTrap() :  ClapTrap(), gate_keeper_mode_(false)
+                        , const_energy_point_(50)
 {
     cout << "[ScavTrap] Default constructor called" << endl;
+    this->name_ = "name";
     this->hit_point_ = 100;
     this->energy_point_ = 50;
     this->attack_damege_ = 20;
 }
 
-ScavTrap::ScavTrap(string name) : gate_keeper_mode_(false)
+ScavTrap::ScavTrap(string name) : ClapTrap(name), gate_keeper_mode_(false)
+                        , const_energy_point_(50)
 {
     cout << "[ScavTrap]constructor called" << endl;
     this->name_ = name;
@@ -20,9 +23,11 @@ ScavTrap::ScavTrap(string name) : gate_keeper_mode_(false)
     this->attack_damege_ = 20;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &scav) : ClapTrap(scav.name_) , gate_keeper_mode_(scav.gate_keeper_mode_) 
+ScavTrap::ScavTrap(const ScavTrap &scav) : ClapTrap(scav) , gate_keeper_mode_(scav.gate_keeper_mode_) 
+                        , const_energy_point_(50)
 {
     cout << "[ScavTrap]Copy constructor called" << endl;
+    this->name_ = scav.name_;
     this->hit_point_ = scav.hit_point_;
     this->energy_point_ = scav.energy_point_;
     this->attack_damege_ = scav.attack_damege_;
@@ -33,6 +38,7 @@ ScavTrap& ScavTrap::operator=(const ScavTrap &scav)
     cout << "[ScavTrap]Copy assignment operator called" << endl;
     if (this == &scav)
         return (*this);
+    this->ClapTrap::operator=(scav);
     this->name_ = scav.name_;
     this->hit_point_ = scav.hit_point_;
     this->energy_point_ = scav.energy_point_;
@@ -46,14 +52,14 @@ ScavTrap::~ScavTrap()
     cout << "[ScavTrap][" << this->name_ << "]Destructor called" << endl;
 }
 
-void ScavTrap::attack(const std::string & target)
+void ScavTrap::attack(const std::string& target)
 {
     if (this->energy_point_ == 0)
     {
         cout << "[ScavTrap][attack]Cannot attack. Because Energy Points is Zero" << endl;
         return ;
     }
-    cout << "[ScavTrap][attack]ClapTrap " << this->name_;
+    cout << "[ScavTrap][attack]ScavTrap " << this->name_;
     cout << " attacks " << target;
     cout << " causing " << this->attack_damege_;
     cout << " points of damage!";

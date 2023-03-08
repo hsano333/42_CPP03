@@ -3,10 +3,19 @@
 #include "FragTrap.hpp"
 #include "DiamondTrap.hpp"
 
+using std::cout;
+using std::endl;
+
+/*
+#include <stdio.h>
+__attribute__((destructor)) void f(void){
+    system("leaks Now_its_weird");
+}
+*/
 int main(void)
 {
     {
-        ClapTrap clap("Test_Clap_Name");
+        //ClapTrap clap("Test_Clap_Name");
         DiamondTrap dia("Test_Diamond_Name");
         dia.attack("Enemy_Name");
         dia.takeDamage(0);
@@ -16,10 +25,11 @@ int main(void)
         dia.takeDamage(30);
         dia.takeDamage(1);
 
-        dia.highFivesGuys();
-        clap = dia;
+        std::cout << std::endl;
+        dia.whoAmI();
+        //clap = dia;
         //clap.whoAmI();
-        clap.attack("Enemy_Name");
+        //clap.attack("Enemy_Name");
 
 
         dia.beRepaired(INT_MAX + 1u);
@@ -31,18 +41,35 @@ int main(void)
             //dia.beRepaired(1);
         dia.attack("Enemy_Name");
         dia.beRepaired(1);
-        dia.whoAmI();
     }
     {
+        std::cout << std::endl << "Test2" << endl;
+        DiamondTrap dia("Test2");
+        DiamondTrap dia2 = DiamondTrap(dia);
+        DiamondTrap dia3;
+        dia3 = dia;
+
+        dia.attack("Enemy1");
+        dia.whoAmI();
+        dia2.attack("Enemy2");
+        dia2.whoAmI();
+        dia3.attack("Enemy3");
+        dia3.whoAmI();
+
+    }
+    {
+        cout << endl << "Test3" << endl;
         ClapTrap *clap1 = new ClapTrap();
         ClapTrap *frag1 = new DiamondTrap();
         ClapTrap *test;
-        clap1->attack("Test1");
-        frag1->attack("Test2");
+        clap1->attack("Enemy1");
+        frag1->attack("Enemy2");
         test = clap1;
-        test->attack("Test3");
+        test->attack("Enemy3");
         test = frag1;
-        test->attack("Test4");
+        test->attack("Enemy4");
+        clap1->beRepaired(1);
+        frag1->beRepaired(1);
         delete clap1;
         delete frag1;
 
