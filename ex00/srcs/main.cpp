@@ -1,10 +1,12 @@
 #include "ClapTrap.hpp"
 #include <iostream>
 
+/*
 #include <stdio.h>
 __attribute__((destructor)) void f(void){
     system("leaks Aaaaand...OPEN!");
 }
+*/
 int main(void)
 {
     {
