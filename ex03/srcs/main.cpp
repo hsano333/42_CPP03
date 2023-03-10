@@ -55,23 +55,26 @@ int main(void)
         dia2.whoAmI();
         dia3.attack("Enemy3");
         dia3.whoAmI();
+        dia3.guardGate();
+        dia3.highFivesGuys();
 
     }
     {
         cout << endl << "Test3" << endl;
         ClapTrap *clap1 = new ClapTrap();
-        ClapTrap *frag1 = new DiamondTrap();
+        ClapTrap *dia1 = new DiamondTrap();
         ClapTrap *test;
         clap1->attack("Enemy1");
-        frag1->attack("Enemy2");
+        dia1->attack("Enemy2");
         test = clap1;
         test->attack("Enemy3");
-        test = frag1;
+        test = dia1;
         test->attack("Enemy4");
         clap1->beRepaired(1);
-        frag1->beRepaired(1);
+        dia1->beRepaired(1);
+
         delete clap1;
-        delete frag1;
+        delete dia1;
 
     }
 
