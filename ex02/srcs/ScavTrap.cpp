@@ -43,7 +43,6 @@ ScavTrap& ScavTrap::operator=(const ScavTrap &scav)
     this->gate_keeper_mode_ = scav.gate_keeper_mode_;
     return (*this);
 }
-
 ScavTrap::~ScavTrap()
 {
     cout << "[ScavTrap][" << this->name_ << "]Destructor called" << endl;

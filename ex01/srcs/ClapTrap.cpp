@@ -88,7 +88,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 {
     if (this->hit_point_ == 0)
     {
-        cout << "[ClapTrap][beRepaired]Cannot repaired. Because Hit Energy Points is Zero" << endl;
+        cout << "[ClapTrap][beRepaired]Cannot repaired. Because Hit Points is Zero" << endl;
         return ;
     }
     if (this->energy_point_ == 0)
