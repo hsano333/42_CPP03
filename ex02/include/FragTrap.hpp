@@ -6,6 +6,9 @@
 class FragTrap : public ClapTrap
 {
     private:
+        const unsigned int const_hit_point_;
+        const unsigned int const_energy_point_;
+        const unsigned int const_attack_damege_;
     public:
         FragTrap();
         FragTrap(string name);

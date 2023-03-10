@@ -5,29 +5,32 @@ using std::endl;
 
 FragTrap::FragTrap() : ClapTrap()
                      , const_hit_point_(100)
+                     , const_energy_point_(100)
                      , const_attack_damege_(30)
 {
     cout << "[FragTrap] Default constructor called" << endl;
     this->name_ = "name";
-    this->hit_point_ = 100;
-    this->energy_point_ = 100;
-    this->attack_damege_ = 30;
+    this->hit_point_ = this->const_hit_point_;
+    this->energy_point_ = this->const_energy_point_;
+    this->attack_damege_ = this->const_attack_damege_;
 }
 
 FragTrap::FragTrap(string name) : ClapTrap(name)
-                                 , const_hit_point_(100)
-                                 , const_attack_damege_(30)
+                             , const_hit_point_(100)
+                             , const_energy_point_(100)
+                             , const_attack_damege_(30)
 {
     cout << "[FragTrap]constructor called" << endl;
     this->name_ = name;
-    this->hit_point_ = 100;
-    this->energy_point_ = 100;
-    this->attack_damege_ = 30;
+    this->hit_point_ = this->const_hit_point_;
+    this->energy_point_ = this->const_energy_point_;
+    this->attack_damege_ = this->const_attack_damege_;
 }
 
 FragTrap::FragTrap(const FragTrap &frag) : ClapTrap(frag)
-                                     , const_hit_point_(100)
-                                     , const_attack_damege_(30)
+                                         , const_hit_point_(100)
+                                         , const_energy_point_(100)
+                                         , const_attack_damege_(30)
 {
     cout << "[FragTrap]Copy constructor called" << endl;
     this->name_ = frag.name_;
@@ -77,5 +80,10 @@ void FragTrap::attack(const std::string & target)
 
 void FragTrap::highFivesGuys(void)
 {
+    if (this->hit_point_ == 0)
+    {
+        cout << "[FragTrap][highFivesGuys]Cannot request high fives. Because Hit Points is Zero" << endl;
+        return ;
+    }
     cout << "[FragTrap] Give me five" << endl;
 }

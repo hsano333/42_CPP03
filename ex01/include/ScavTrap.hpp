@@ -7,6 +7,9 @@ class ScavTrap : public ClapTrap
 {
     private:
         bool gate_keeper_mode_;
+        const unsigned int const_hit_point_;
+        const unsigned int const_energy_point_;
+        const unsigned int const_attack_damege_;
     public:
         ScavTrap();
         ScavTrap(string name);

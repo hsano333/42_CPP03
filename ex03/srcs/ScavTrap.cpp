@@ -4,33 +4,40 @@ using std::cout;
 using std::endl;
 
 ScavTrap::ScavTrap() :  ClapTrap(), gate_keeper_mode_(false)
-                        , const_energy_point_(50)
+                     , const_hit_point_(100)
+                     , const_energy_point_(50)
+                     , const_attack_damege_(20)
 {
     cout << "[ScavTrap] Default constructor called" << endl;
     this->name_ = "name";
-    this->hit_point_ = 100;
-    this->energy_point_ = const_energy_point_;
-    this->attack_damege_ = 20;
+    this->hit_point_ = this->const_hit_point_;
+    this->energy_point_ = this->const_energy_point_;
+    this->attack_damege_ = this->const_attack_damege_;
 }
 
 ScavTrap::ScavTrap(string name) : ClapTrap(name), gate_keeper_mode_(false)
-                        , const_energy_point_(50)
+                                 , const_hit_point_(100)
+                                 , const_energy_point_(50)
+                                 , const_attack_damege_(20)
 {
     cout << "[ScavTrap]constructor called" << endl;
     this->name_ = name;
-    this->hit_point_ = 100;
-    this->energy_point_ = const_energy_point_;
-    this->attack_damege_ = 20;
+    this->hit_point_ = this->const_hit_point_;
+    this->energy_point_ = this->const_energy_point_;
+    this->attack_damege_ = this->const_attack_damege_;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &scav) : ClapTrap(scav) , gate_keeper_mode_(scav.gate_keeper_mode_) 
-                        , const_energy_point_(50)
+                                         , const_hit_point_(100)
+                                         , const_energy_point_(50)
+                                         , const_attack_damege_(20)
 {
     cout << "[ScavTrap]Copy constructor called" << endl;
     this->name_ = scav.name_;
     this->hit_point_ = scav.hit_point_;
     this->energy_point_ = scav.energy_point_;
     this->attack_damege_ = scav.attack_damege_;
+    this->gate_keeper_mode_ = scav.gate_keeper_mode_;
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap &scav)

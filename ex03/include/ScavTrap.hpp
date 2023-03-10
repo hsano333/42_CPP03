@@ -7,9 +7,9 @@ class ScavTrap : virtual public ClapTrap
 {
     protected:
         bool gate_keeper_mode_;
-        //unsigned int hit_point_;
+        const unsigned int const_hit_point_;
         const unsigned int const_energy_point_;
-        //unsigned int attack_damege_;
+        const unsigned int const_attack_damege_;
     public:
         ScavTrap();
         ScavTrap(string name);
