@@ -50,6 +50,11 @@ FragTrap::~FragTrap()
 
 void FragTrap::attack(const std::string & target)
 {
+    if (this->hit_point_ == 0)
+    {
+        cout << "[FragTrap][attack]Cannot attack. Because Hit Points is Zero" << endl;
+        return ;
+    }
     if (this->energy_point_ == 0)
     {
         cout << "[FragTrap][attack]Cannot attack. Because Energy Points is Zero" << endl;

@@ -50,6 +50,11 @@ ScavTrap::~ScavTrap()
 
 void ScavTrap::attack(const std::string& target)
 {
+    if (this->hit_point_ == 0)
+    {
+        cout << "[ScavTrap][attack]Cannot attack. Because Hit Points is Zero" << endl;
+        return ;
+    }
     if (this->energy_point_ == 0)
     {
         cout << "[ScavTrap][attack]Cannot attack. Because Energy Points is Zero" << endl;

@@ -9,7 +9,7 @@ ScavTrap::ScavTrap() :  ClapTrap(), gate_keeper_mode_(false)
     cout << "[ScavTrap] Default constructor called" << endl;
     this->name_ = "name";
     this->hit_point_ = 100;
-    this->energy_point_ = 50;
+    this->energy_point_ = const_energy_point_;
     this->attack_damege_ = 20;
 }
 
@@ -19,7 +19,7 @@ ScavTrap::ScavTrap(string name) : ClapTrap(name), gate_keeper_mode_(false)
     cout << "[ScavTrap]constructor called" << endl;
     this->name_ = name;
     this->hit_point_ = 100;
-    this->energy_point_ = 50;
+    this->energy_point_ = const_energy_point_;
     this->attack_damege_ = 20;
 }
 
@@ -54,6 +54,11 @@ ScavTrap::~ScavTrap()
 
 void ScavTrap::attack(const std::string& target)
 {
+    if (this->hit_point_ == 0)
+    {
+        cout << "[ScavTrap][attack]Cannot attack. Because Hit Points is Zero" << endl;
+        return ;
+    }
     if (this->energy_point_ == 0)
     {
         cout << "[ScavTrap][attack]Cannot attack. Because Energy Points is Zero" << endl;

@@ -41,6 +41,11 @@ ClapTrap::~ClapTrap()
 
 void ClapTrap::attack(const std::string& target)
 {
+    if (this->hit_point_ == 0)
+    {
+        cout << "[ClapTrap][attack]Cannot attack. Because Hit Points is Zero" << endl;
+        return ;
+    }
     if (this->energy_point_ == 0)
     {
         cout << "[ClapTrap][attack]Cannot attack. Because Energy Points is Zero" << endl;
@@ -81,16 +86,16 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
+    if (this->hit_point_ == 0)
+    {
+        cout << "[ClapTrap][beRepaired]Cannot repaired. Because Hit Energy Points is Zero" << endl;
+        return ;
+    }
     if (this->energy_point_ == 0)
     {
         cout << "[ClapTrap][beRepaired]Cannot repaired. Because Remaining Energy Points is Zero" << endl;
         return ;
     }
-    //if (this->hit_point_ == INT_MAX)
-    //{
-        //cout << "[beRepaired]Cannot repaired. Because Remaining Energy Points is MAX" << endl;
-        //return ;
-    //}
     if (amount > this->max_)
     {
         cout << "[ClapTrap][beRepaired]Cannot repaired. amount is lather than MAX" << endl;
