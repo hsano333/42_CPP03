@@ -73,6 +73,11 @@ void ScavTrap::attack(const std::string& target)
 
 void ScavTrap::guardGate(void)
 {
+    if (this->hit_point_ == 0)
+    {
+        cout << "[ScavTrap][guardGate]Cannot guardGate. Because Hit Points is Zero" << endl;
+        return ;
+    }
     if (this->gate_keeper_mode_)
         cout << "[ScavTrap] Gate keeper mode is ON" << endl;
     else

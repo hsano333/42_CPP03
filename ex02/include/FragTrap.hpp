@@ -6,7 +6,6 @@
 class FragTrap : public ClapTrap
 {
     private:
-        string high_fives_;
     public:
         FragTrap();
         FragTrap(string name);

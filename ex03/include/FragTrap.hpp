@@ -6,7 +6,6 @@
 class FragTrap : virtual public ClapTrap
 {
     protected:
-        string high_fives_;
         const unsigned int const_hit_point_;
         //unsigned int energy_point_;
         const unsigned int const_attack_damege_;

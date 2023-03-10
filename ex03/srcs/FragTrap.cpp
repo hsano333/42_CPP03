@@ -3,9 +3,9 @@
 using std::cout;
 using std::endl;
 
-FragTrap::FragTrap() : ClapTrap(), high_fives_("")
-                             , const_hit_point_(100)
-                             , const_attack_damege_(30)
+FragTrap::FragTrap() : ClapTrap()
+                     , const_hit_point_(100)
+                     , const_attack_damege_(30)
 {
     cout << "[FragTrap] Default constructor called" << endl;
     this->name_ = "name";
@@ -14,9 +14,9 @@ FragTrap::FragTrap() : ClapTrap(), high_fives_("")
     this->attack_damege_ = 30;
 }
 
-FragTrap::FragTrap(string name) : ClapTrap(name), high_fives_("")
-                             , const_hit_point_(100)
-                             , const_attack_damege_(30)
+FragTrap::FragTrap(string name) : ClapTrap(name)
+                                 , const_hit_point_(100)
+                                 , const_attack_damege_(30)
 {
     cout << "[FragTrap]constructor called" << endl;
     this->name_ = name;
@@ -25,9 +25,9 @@ FragTrap::FragTrap(string name) : ClapTrap(name), high_fives_("")
     this->attack_damege_ = 30;
 }
 
-FragTrap::FragTrap(const FragTrap &frag) : ClapTrap(frag) , high_fives_(frag.high_fives_) 
-                             , const_hit_point_(100)
-                             , const_attack_damege_(30)
+FragTrap::FragTrap(const FragTrap &frag) : ClapTrap(frag)
+                                     , const_hit_point_(100)
+                                     , const_attack_damege_(30)
 {
     cout << "[FragTrap]Copy constructor called" << endl;
     this->name_ = frag.name_;
@@ -46,7 +46,6 @@ FragTrap& FragTrap::operator=(const FragTrap &frag)
     this->hit_point_ = frag.hit_point_;
     this->energy_point_ = frag.energy_point_;
     this->attack_damege_ = frag.attack_damege_;
-    this->high_fives_ = frag.high_fives_;
     return (*this);
 }
 FragTrap::~FragTrap()
@@ -78,8 +77,5 @@ void FragTrap::attack(const std::string & target)
 
 void FragTrap::highFivesGuys(void)
 {
-    if (this->high_fives_ == "")
-        cout << "[FragTrap] positive high fives request dose not exist" << endl;
-    else
-        cout << "[FragTrap] high fives request is [" <<  this->high_fives_  << "]" << endl;
+    cout << "[FragTrap] Give me five" << endl;
 }
