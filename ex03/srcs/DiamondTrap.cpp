@@ -68,6 +68,11 @@ void DiamondTrap::attack(const std::string & target)
 
 void DiamondTrap::whoAmI(void)
 {
+    if (this->hit_point_ == 0)
+    {
+        cout << "[DiamondTrap][whoAmI]Cannot whoAmI(). Because Hit Points is Zero" << endl;
+        return ;
+    }
     cout << "[DiamondTrap]DiamondTrap's name is " << this->name_ << endl;
     cout << "[DiamondTrap]ClapTrap's name is " << this->ClapTrap::name_ << endl;
 }
